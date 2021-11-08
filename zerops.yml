@@ -1,5 +1,5 @@
 use: [nodejs@14]
 run:
   - npm install
-  - npm run build
+  - npm run build --prod
 deploy: ['./dist', 'node_modules', 'package.json']
