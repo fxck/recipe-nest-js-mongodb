@@ -8,15 +8,13 @@ async function bootstrap() {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
-
-    console.log(res);
-
     next();
   });
 
   app.enableCors({
     allowedHeaders: '*',
-    origin: '*'
+    origin: '*',
+    preflightContinue: true
   });
 
   await app.listen(3000);
